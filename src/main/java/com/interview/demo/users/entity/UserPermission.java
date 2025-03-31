@@ -1,0 +1,27 @@
+package com.interview.demo.users.entity;
+
+import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
+
+import java.io.Serializable;
+
+@Entity
+@Table(name="fwk_user_permission")
+@Getter
+@Setter
+@ToString
+public class UserPermission {
+
+    @EmbeddedId
+    private UserPermissionId id;
+
+    @Embeddable
+    @Getter
+    @Setter
+    public static class UserPermissionId implements Serializable {
+        private @ManyToOne User user;
+        private @ManyToOne Permission permission;
+    }
+}
