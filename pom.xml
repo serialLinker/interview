@@ -107,6 +107,11 @@
 									<version>${org.mapstruct.version}</version>
 								</path>
 							</annotationProcessorPaths>
+                            <compilerArgs>
+                                <arg>
+                                    -Amapstruct.defaultComponentModel=spring
+                                </arg>
+                            </compilerArgs>
 						</configuration>
 					</execution>
 					<execution>
